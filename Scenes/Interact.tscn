@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dqc50dlk5acds"]
+
+[node name="Interact" type="CenterContainer" unique_id=363335737]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.68500006
+offset_bottom = 0.1199646
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=2079554488]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.6901961, 0.6156863, 1)
+theme_override_font_sizes/font_size = 24

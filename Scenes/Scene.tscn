@@ -1,0 +1,325 @@
+[gd_scene format=4 uid="uid://dqg1mgr28y8ie"]
+
+[ext_resource type="Script" uid="uid://c8goxbm4tpfwu" path="res://Scripts/Scene.gd" id="1_qswnl"]
+[ext_resource type="PackedScene" uid="uid://cim5w1286q1cp" path="res://Scenes/Museum.tscn" id="1_s3lxa"]
+[ext_resource type="PackedScene" uid="uid://clgh5wmcjc3it" path="res://Scenes/Player.tscn" id="2_s7xl2"]
+[ext_resource type="Script" uid="uid://dssv5ypno3qe4" path="res://Scripts/PauseMenu.gd" id="5_qswnl"]
+[ext_resource type="PackedScene" uid="uid://0nap0ss5ka6t" path="res://Scenes/Security.tscn" id="5_v3fvj"]
+[ext_resource type="Texture2D" uid="uid://drsm8lxrqtlev" path="res://Textures/steel_background.png" id="7_s7xl2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y24bc"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_v3fvj"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAACAAEAAwAEAAEABQAAAAIAAwAAAAUABAAGAAIABQACAAYAAwAHAAQAAwAFAAcABwAGAAQABwAFAAYA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAP//AAAAAAAA/////wAAAAAAAAAAAAD/////AAAAAP//AAD//wAA////////AAD//wAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qswnl"]
+resource_name = "Museum_Cube"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("/1////+f/7//n////1//v/9f/7//n/9//5//v/9f/3//X/9//5//P/+f/3//X/8//1//P/+fAAD/n/8//18AAP8f/3//X/8//1//f/8f/z//n/9//9//P//f/3//n/8/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_y24bc"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAP//VNUAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAAAAD///////8AAP//AAD//wAA/////wAAAAD/////AAAAAFTV////////VNX/////AABU1f//AAD//1TV//8AAP///78AAP//////v/////////+/AAAAAP///78AAAAAAAD/v///AAD///+///8AAAAA/78AAAAA////v/////8AAP//AAD///////8AAP//AAD/////////////VNVU1VTVVNVU1VTVVNVU1f+//7//v/+//7//v/+//7+qKqoqqiqqKqoqqiqqKqoq/////////////////////wAA/38AAP9/AAD/fwAA/3//f/+//3//v/9//7//f/+/")
+}]
+shadow_mesh = SubResource("ArrayMesh_v3fvj")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_khr67"]
+data = PackedVector3Array(-1, -1, 1, -1, 1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, -1, 1, -1, -1, 1, 1, -1, 1, -1, -1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, 1, 1, 1, -1, 1, -1, 1, 1, 1, 1, 1, 1, -1, 1, -1, -1, 1, -1, 1, 1, -1, -1, -1, 1, -1, 1, 1, -1, -1, -1, -1, -1, -1, -1, 1, 1, -1, 1, 1, 1, -1, -1, 1, 1, -1, 1, -1, 1, 1, -1, 1, 1, 1, -1, 1, 1)
+
+[sub_resource type="Animation" id="Animation_v3fvj"]
+resource_name = "Patrol"
+length = 9.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 3.1, 6.1, 6.2, 9.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.062, 0.165, -0.088), Vector3(-0.062, 0.165, -1.15), Vector3(-0.062, 0.165, -1.1500001), Vector3(-1.15, 0.165, -1.15), Vector3(-1.1149032, 0.165, -1.115742), Vector3(-0.062000036, 0.165, -0.08800006)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.0000002, 3.1000001, 6.1, 6.2, 9.200001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 3.1415927, 0), Vector3(0, 3.1415927, 0), Vector3(0, -1.5707964, 0), Vector3(0, -1.5707964, 0), Vector3(0, 0.77318084, 0), Vector3(0, 0.77318084, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_khr67"]
+_data = {
+&"Patrol": SubResource("Animation_v3fvj")
+}
+
+[sub_resource type="Animation" id="Animation_qswnl"]
+resource_name = "Patrol"
+length = 9.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 3.1, 6.1, 6.2, 9.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.15, 0.165, 0.062), Vector3(0.088, 0.165, 0.062), Vector3(0.088, 0.165, 0.062), Vector3(0.088, 0.165, 1.15), Vector3(0.105700016, 0.165, 1.1318667), Vector3(1.15, 0.165, 0.062)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3, 3.1, 6.1, 6.2, 9.200001),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.5707964, 0), Vector3(0, -1.5707964, 0), Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0, 2.3439772, 0), Vector3(0, 2.3439772, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s7xl2"]
+_data = {
+&"Patrol": SubResource("Animation_qswnl")
+}
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_853f1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_khr67"]
+
+[node name="Scene" type="Node3D" unique_id=439796115]
+script = ExtResource("1_qswnl")
+player_scene = ExtResource("2_s7xl2")
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=1095977056]
+transform = Transform3D(100, 0, 0, 0, 0.05, 0, 0, 0, 100, 0, -0.04, 0)
+mesh = SubResource("ArrayMesh_qswnl")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Floor" unique_id=1571055797]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor/StaticBody3D" unique_id=38001116]
+shape = SubResource("ConcavePolygonShape3D_khr67")
+
+[node name="Light1" type="Node3D" parent="." unique_id=1215126642]
+transform = Transform3D(-0.70710677, 0.49999994, 0.49999994, 0, -0.7071067, 0.7071067, 0.70710677, 0.49999994, 0.49999994, 27.963417, 21.567104, 19.990791)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Light1" unique_id=993272917]
+transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1, 0, 0, 0)
+light_specular = 0.0
+shadow_enabled = true
+
+[node name="Museum" parent="." unique_id=708002878 instance=ExtResource("1_s3lxa")]
+
+[node name="Security1" parent="." unique_id=1752660572 instance=ExtResource("5_v3fvj")]
+transform = Transform3D(-0.14999934, 0, -1.31133415e-08, 0, 0.14999919, 0, 1.3113358e-08, 0, -0.14999914, -0.062, 0.165, -0.088)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Security1" unique_id=271953491]
+libraries/ = SubResource("AnimationLibrary_khr67")
+
+[node name="Security2" parent="." unique_id=1232809297 instance=ExtResource("5_v3fvj")]
+transform = Transform3D(-6.556708e-09, 0, -0.14999999, 0, 0.14999999, 0, 0.14999999, 0, -6.556708e-09, 1.15, 0.165, 0.062)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Security2" unique_id=1319150039]
+libraries/ = SubResource("AnimationLibrary_s7xl2")
+
+[node name="Spawn" type="Node3D" parent="." unique_id=387414733]
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
+
+[node name="Crosshair" type="Control" parent="." unique_id=1197130230]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Crosshair" unique_id=1277052118]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Crosshair/CenterContainer" unique_id=1212847883]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="PauseMenu" type="Control" parent="." unique_id=2019721390]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_qswnl")
+
+[node name="TextureRect" type="TextureRect" parent="PauseMenu" unique_id=1396124758]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_s7xl2")
+expand_mode = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="PauseMenu" unique_id=1588699907]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.47800002
+anchor_right = 0.5
+anchor_bottom = 0.47800002
+offset_left = -97.0
+offset_top = -64.74402
+offset_right = 97.0
+offset_bottom = 65.25598
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu/CenterContainer" unique_id=2146541027]
+layout_mode = 2
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Button1" type="Button" parent="PauseMenu/CenterContainer/VBoxContainer" unique_id=1668897430]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_853f1")
+text = "Return to game"
+flat = true
+
+[node name="Button2" type="Button" parent="PauseMenu/CenterContainer/VBoxContainer" unique_id=1428803373]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_853f1")
+text = "Return to menu"
+flat = true
+
+[node name="MainMenu" type="Control" parent="." unique_id=672746765]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="MainMenu" unique_id=2011315028]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_s7xl2")
+expand_mode = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="MainMenu" unique_id=2110878474]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.47800002
+anchor_right = 0.5
+anchor_bottom = 0.47800002
+offset_left = -97.0
+offset_top = -64.74402
+offset_right = 97.0
+offset_bottom = 65.25598
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/CenterContainer" unique_id=1096969465]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Button1" type="Button" parent="MainMenu/CenterContainer/VBoxContainer" unique_id=1324024853]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_khr67")
+text = "Singleplayer"
+flat = true
+
+[node name="Button2" type="Button" parent="MainMenu/CenterContainer/VBoxContainer" unique_id=1295331174]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_khr67")
+text = "Create group"
+flat = true
+
+[node name="Button3" type="Button" parent="MainMenu/CenterContainer/VBoxContainer" unique_id=1270834973]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_khr67")
+text = "Join group"
+flat = true
+
+[node name="Button4" type="Button" parent="MainMenu/CenterContainer/VBoxContainer" unique_id=1336651344]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_khr67")
+text = "Exit Game"
+flat = true
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=742335655]
+_spawnable_scenes = PackedStringArray("uid://clgh5wmcjc3it")
+spawn_path = NodePath("../Spawn")
+
+[connection signal="pressed" from="PauseMenu/CenterContainer/VBoxContainer/Button1" to="PauseMenu" method="_on_return_to_game_btn_pressed"]
+[connection signal="pressed" from="PauseMenu/CenterContainer/VBoxContainer/Button2" to="PauseMenu" method="_on_return_to_main_menu_btn_pressed"]
+[connection signal="pressed" from="MainMenu/CenterContainer/VBoxContainer/Button1" to="." method="_on_start_game_btn_pressed"]
+[connection signal="pressed" from="MainMenu/CenterContainer/VBoxContainer/Button2" to="." method="_on_create_group_btn_pressed"]
+[connection signal="pressed" from="MainMenu/CenterContainer/VBoxContainer/Button3" to="." method="_on_join_group_btn_pressed"]
+[connection signal="pressed" from="MainMenu/CenterContainer/VBoxContainer/Button4" to="." method="_on_quit_btn_pressed"]

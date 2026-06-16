@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://ctpay560nh06v"]
+
+[ext_resource type="Script" uid="uid://dca8motqxbr10" path="res://Scripts/MainMenu.gd" id="1_853f1"]
+[ext_resource type="Texture2D" uid="uid://drsm8lxrqtlev" path="res://Textures/steel_background.png" id="1_tt5f1"]
+[ext_resource type="PackedScene" uid="uid://clgh5wmcjc3it" path="res://Scenes/Player.tscn" id="2_8saeu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_853f1"]
+
+[node name="MainMenu" type="Control" unique_id=2019721390]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_853f1")
+player_scene = ExtResource("2_8saeu")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1396124758]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_tt5f1")
+expand_mode = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1588699907]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.47800002
+anchor_right = 0.5
+anchor_bottom = 0.47800002
+offset_left = -97.0
+offset_top = -64.74402
+offset_right = 97.0
+offset_bottom = 65.25598
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=2146541027]
+layout_mode = 2
+theme_override_constants/separation = 3
+alignment = 1
+
+[node name="Button1" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1668897430]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_853f1")
+text = "Singleplayer"
+flat = true
+
+[node name="Button2" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1428803373]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_853f1")
+text = "Create group"
+flat = true
+
+[node name="Button3" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1270834973]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_853f1")
+text = "Join group"
+flat = true
+
+[node name="Button4" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1336651344]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_853f1")
+text = "Exit Game"
+flat = true
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button1" to="." method="_on_start_game_btn_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button2" to="." method="_on_create_group_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button3" to="." method="_on_join_group_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button4" to="." method="_on_quit_btn_pressed"]

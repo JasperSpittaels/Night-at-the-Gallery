@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://ciiejc2ehs11e"]
+
+[ext_resource type="Script" uid="uid://bbkuplhxay7un" path="res://Scripts/Caught.gd" id="1_bca13"]
+[ext_resource type="Texture2D" uid="uid://drsm8lxrqtlev" path="res://Textures/steel_background.png" id="2_5wrcg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bca13"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_853f1"]
+
+[node name="Caught" type="Control" unique_id=2019721390]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bca13")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1396124758]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5wrcg")
+expand_mode = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1588699907]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.47800002
+anchor_right = 0.5
+anchor_bottom = 0.47800002
+offset_left = -97.0
+offset_top = -64.74402
+offset_right = 97.0
+offset_bottom = 65.25598
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer" unique_id=2146541027]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer" unique_id=322985097]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bca13")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer" unique_id=1336651344]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_853f1")
+text = "Return to Main menu"
+flat = true
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="." method="_on_return_to_main_menu_pressed"]
